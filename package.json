@@ -1,0 +1,23 @@
+{
+    "name": "dom-builder",
+    "version": "1.0.0",
+    "description": "A template system that creates DOM nodes rather than just strings.",
+    "main": "index.js",
+    "author": "Jason Howell",
+    "license": "MIT",
+    "dependencies": {
+        "ramda": "^0.26.1"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.7.1",
+        "babel": "^6.23.0",
+        "babel-jest": "^24.9.0",
+        "babel-plugin-add-module-exports": "^1.0.2",
+        "eslint": "^6.6.0",
+        "jest": "^24.9.0",
+        "jsdom": "^15.2.1"
+    },
+    "scripts": {
+        "test": "jest"
+    }
+}
