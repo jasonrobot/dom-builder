@@ -19,7 +19,7 @@ const tags = [
     'details', 'summary', 'menuitem', 'menu'
 ];
 
-const elem = (tag, attrs = [], children = []) => {
+function elem(tag, attrs = [], children = []) {
     if (Array.isArray(attrs) === false) {
         throw 'attrs must be an array';
     }

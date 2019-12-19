@@ -46,7 +46,21 @@ describe('the basics', () => {
 });
 
 describe('children', () => {
-
+    fit('should be able to nest a bunch of nodes', () => {
+        const dom = Array(100)
+              .fill('div')
+              .reduce(
+                  (acc, next) => D[next]([], [acc]),
+                  D.div()
+              );
+        let cur = dom;
+        let count = 0;
+        while (cur.childElementCount > 0) {
+            count += 1;
+            cur = cur.childNodes[0];
+        }
+        expect(count).toEqual(100);
+    });
 });
 
 describe('attributes', () => {
