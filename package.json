@@ -1,9 +1,10 @@
 {
-    "name": "dom-builder",
-    "version": "1.0.0",
+    "name": "domfu",
+    "version": "0.1.1",
     "description": "A template system that creates DOM nodes rather than just strings.",
     "main": "index.js",
     "author": "Jason Howell",
+    "repository": "git@github.com:jasonrobot/domfu.git",
     "license": "MIT",
     "dependencies": {
         "ramda": "^0.26.1"
