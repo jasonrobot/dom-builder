@@ -26,7 +26,7 @@
 // do this instead, because nodejs hates default export
 import * as Html from './src/html.js';
 import * as Attribute from './src/attribute.js';
-import domfu from './src/document.js';
+import domfu from './src/documentFragment.js';
 console.log(domfu);
 const D = {
     ...Html,

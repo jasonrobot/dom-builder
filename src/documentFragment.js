@@ -1,11 +1,8 @@
 import * as R from 'ramda';
 
-export default function domfu(...children) {
+export default function documentFragment(...children) {
     const fragment = new DocumentFragment();
-    for(const child of children) {
-        console.log(child)
-        fragment.appendChild(child);
-    }
+    R.forEach(child => fragment.appendChild(child), children);
     return fragment;
 }
 

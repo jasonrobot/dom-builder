@@ -30,20 +30,19 @@ function elem(tag, attrs = [], ...children) {
     }
 
     if (Array.isArray(children) === false) {
-        throw 'children must be an array';
+        throw 'children must be an array or a string to make a text node child';
     }
 
     const el = document.createElement(tag);
-    attrs.forEach(attr => el.setAttributeNode(attr));
-    // console.log(children);
-    children.forEach(child => el.appendChild(child));
+    R.forEach(attr => el.setAttributeNode(attr), attrs);
+
+    R.forEach(child => el.appendChild(child), children);
     return el;
 };
 
 const tagFns = tags.map(tag => [tag, R.partial(elem, [tag])]);
 
 function text(content){
-    //return String(content);
     return document.createTextNode(String(content));
 }
 
