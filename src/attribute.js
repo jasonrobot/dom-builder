@@ -36,7 +36,6 @@ const attrNames = [
 const attr = (attrName, ...attrValue) => {
     const attr = document.createAttribute(attrName);
     attr.value = attrValue.join(' ');
-    console.log(`attr val: ${attr.value}`);
     return attr;
 };
 
