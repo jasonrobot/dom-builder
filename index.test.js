@@ -104,6 +104,13 @@ describe('children', () => {
         const dom = D.div('test');
         expect(dom.textContent).toEqual('test');
     });
+
+    it('should work for the looping example in the readme', () => {
+        const dom = D.ul([],
+            ...[1, 2, 3, 4].map(number => D.li([], D.text(number)))
+        );
+        expect(dom.querySelectorAll('li').length).toEqual(4);
+    } );
 });
 
 describe('attributes', () => {
