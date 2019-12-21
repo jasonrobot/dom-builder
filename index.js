@@ -21,8 +21,10 @@ const module = {};
 
 import * as Html from './src/html.js';
 import * as Attribute from './src/attribute.js';
+import domfu from './src/document.js';
 
 export default {
     ...Html,
     ...Attribute,
+    domfu
 };

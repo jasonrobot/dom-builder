@@ -19,7 +19,12 @@ const tags = [
     'details', 'summary', 'menuitem', 'menu'
 ];
 
-function elem(tag, attrs = [], children = []) {
+function elem(tag, attrs = [], ...children) {
+    if ('string' === typeof attrs) {
+        children = [text(attrs)];
+        attrs = [];
+    }
+
     if (Array.isArray(attrs) === false) {
         throw 'attrs must be an array';
     }
