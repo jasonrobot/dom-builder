@@ -1,9 +1,3 @@
-import Html from './src/html.js';
-import Attribute from './src/attribute.js';
-import documentFragment from './src/documentFragment.js';
-
-export default {
-    ...Html,
-    ...Attribute,
-    documentFragment
-};
+export * from './src/html.js';
+export * from './src/attribute.js';
+export * from './src/documentFragment.js';
