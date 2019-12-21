@@ -1,24 +1,36 @@
 import * as R from 'ramda';
 
 const attrNames = [
-    'style', 'property', 'attribute', 'map',
-    'id', 'title', 'hidden',
-    'type', 'value', 'checked', 'placeholder', 'selected',
-    'accept', 'acceptCharset', 'action', 'autocomplete', 'autofocus',
-    'disabled', 'enctype', 'list', 'maxlength', 'minlength', 'method', 'multiple',
-    'name', 'novalidate', 'pattern', 'readonly', 'required', 'size', 'for', 'form',
-    'max', 'min', 'step',
-    'cols', 'rows', 'wrap',
-    'href', 'target', 'download', 'hreflang', 'media', 'ping', 'rel',
-    'ismap', 'usemap', 'shape', 'coords',
-    'src', 'height', 'width', 'alt',
-    'autoplay', 'controls', 'loop', 'preload', 'poster', 'default', 'kind', 'srclang',
-    'sandbox', 'srcdoc',
-    'reversed', 'start',
-    'align', 'colspan', 'rowspan', 'headers', 'scope',
-    'accesskey', 'contenteditable', 'contextmenu', 'dir', 'draggable', 'dropzone',
-    'itemprop', 'lang', 'spellcheck', 'tabindex',
-    'cite', 'datetime', 'pubdate', 'manifest',
+    'accesskey', 'action', 'alt', 'async',
+    'autocomplete', 'autofocus', 'autoplay', 'charset', 'checked',
+    'citeAttr', 'classAttr', 'cols', 'colspan', 'content', 'contenteditable',
+    'controls', 'coords', 'data', 'datetime', 'default',
+    'defer', 'dir', 'dirname', 'disabled', 'download', 'draggable',
+    'dropzone', 'enctype', 'for', 'formAttr', 'formaction', 'headers',
+    'height', 'hidden', 'high', 'href', 'hreflang', 'http-equiv', 'id',
+    'ismap', 'kind', 'labelAttr', 'lang', 'list', 'loop', 'low', 'max',
+    'maxlength', 'media', 'method', 'min', 'multiple', 'muted', 'name',
+    'novalidate', 'onabort', 'onafterprint', 'onbeforeprint',
+    'onbeforeunload', 'onblur', 'oncanplay', 'oncanplaythrough',
+    'onchange', 'onclick', 'oncontextmenu', 'oncopy', 'oncuechange',
+    'oncut', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter',
+    'ondragleave', 'ondragover', 'ondragstart', 'ondrop',
+    'ondurationchange', 'onemptied', 'onended', 'onerror', 'onfocus',
+    'onhashchange', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress',
+    'onkeyup', 'onload', 'onloadeddata', 'onloadedmetadata',
+    'onloadstart', 'onmousedown', 'onmousemove', 'onmouseout',
+    'onmouseover', 'onmouseup', 'onmousewheel', 'onoffline', 'ononline',
+    'onpagehide', 'onpageshow', 'onpaste', 'onpause', 'onplay',
+    'onplaying', 'onpopstate', 'onprogress', 'onratechange', 'onreset',
+    'onresize', 'onscroll', 'onsearch', 'onseeked', 'onseeking',
+    'onselect', 'onstalled', 'onstorage', 'onsubmit', 'onsuspend',
+    'ontimeupdate', 'ontoggle', 'onunload', 'onvolumechange',
+    'onwaiting', 'onwheel', 'open', 'optimum', 'pattern', 'placeholder',
+    'poster', 'preload', 'readonly', 'rel', 'required', 'reversed',
+    'rows', 'rowspan', 'sandbox', 'scope', 'selected', 'shape', 'size',
+    'sizes', 'spanAttr', 'spellcheck', 'src', 'srcdoc', 'srclang', 'srcset',
+    'start', 'step', 'styleAttr', 'tabindex', 'target', 'titleAttr',
+    'translate', 'type', 'usemap', 'value', 'width', 'wrap'
 ];
 
 const attr = (attrName, ...attrValue) => {
@@ -30,8 +42,8 @@ const attr = (attrName, ...attrValue) => {
 
 export default {
     ...Object.fromEntries(
-        attrNames.map(attrName => [attrName, R.partial(attr, [attrName])])
+        attrNames.map(
+            attrName => [attrName,
+                         R.partial(attr, [attrName.replace(/Attr/, '')])])
     ),
-    // class needs to be declared this way, since 'class' is a reserved word.
-    classes: R.partial(attr, ['class']),
 };

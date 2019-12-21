@@ -111,7 +111,7 @@ describe('attributes', () => {
         it('should add multiple classes', () => {
             const dom = (
                 D.div(
-                    [D.classes('foo', 'bar', 'baz')]
+                    [D.classAttr('foo', 'bar', 'baz')]
                 )
             );
 
