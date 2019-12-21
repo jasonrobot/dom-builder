@@ -1,6 +1,6 @@
 {
     "name": "domfu",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "A template system that creates DOM nodes rather than just strings.",
     "main": "index.js",
     "author": "Jason Howell",
