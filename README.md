@@ -13,7 +13,8 @@ import D from 'domfu';
 function myTemplate(name) {
     return (
         D.div([D.id('greeting'), D.classAttr('foobar')],
-            D.text('Hello '), D.span([D.style('font-weight: bold')],
+            D.text('Hello '),
+            D.span([D.style('font-weight: bold')],
                 D.text(name)
             )
         )
