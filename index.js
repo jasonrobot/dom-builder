@@ -3,7 +3,7 @@ import Attribute from './src/attribute.js';
 import documentFragment from './src/documentFragment.js';
 
 export default {
-    ...Html,
-    ...Attribute,
+    element: Html,
+    attribute: Attribute,
     documentFragment
 };

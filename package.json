@@ -7,16 +7,23 @@
     "repository": "git@github.com:jasonrobot/domfu.git",
     "license": "MIT",
     "dependencies": {
+        "html-tags": "^3.1.0",
         "ramda": "^0.26.1"
     },
     "devDependencies": {
-        "@babel/preset-env": "^7.7.1",
+        "@babel/core": "^7.9.0",
+        "@babel/preset-env": "^7.9.6",
         "babel": "^6.23.0",
         "babel-jest": "^24.9.0",
         "babel-plugin-add-module-exports": "^1.0.2",
         "eslint": "^6.6.0",
-        "jest": "^24.9.0",
-        "jsdom": "^15.2.1"
+        "handlebars": "^4.5.3",
+        "jest": "^25.4.0",
+        "jquery": "^3.4.1",
+        "jsdom": "^15.2.1",
+        "source-map-loader": "^0.2.4",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.11"
     },
     "scripts": {
         "test": "jest"

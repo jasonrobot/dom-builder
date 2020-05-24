@@ -29,11 +29,11 @@ const attrNames = [
     'poster', 'preload', 'readonly', 'rel', 'required', 'reversed',
     'rows', 'rowspan', 'sandbox', 'scope', 'selected', 'shape', 'size',
     'sizes', 'spanAttr', 'spellcheck', 'src', 'srcdoc', 'srclang', 'srcset',
-    'start', 'step', 'styleAttr', 'tabindex', 'target', 'titleAttr',
+    'start', 'step', 'style', 'tabindex', 'target', 'titleAttr',
     'translate', 'type', 'usemap', 'value', 'width', 'wrap'
 ];
 
-const attr = (attrName, ...attrValue) => {
+const attribute = (attrName, ...attrValue) => {
     const attr = document.createAttribute(attrName);
     attr.value = attrValue.join(' ');
     return attr;
@@ -43,6 +43,7 @@ export default {
     ...Object.fromEntries(
         attrNames.map(
             attrName => [attrName,
-                         R.partial(attr, [attrName.replace(/Attr/, '')])])
+                         R.partial(attribute, [attrName.replace(/Attr/, '')])])
     ),
+    attribute
 };

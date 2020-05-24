@@ -1,8 +1,7 @@
-import * as R from 'ramda';
+const R = require('ramda');
 
-export default function documentFragment(...children) {
+export default function(...children) {
     const fragment = new DocumentFragment();
     R.forEach(child => fragment.appendChild(child), children);
     return fragment;
 }
-
