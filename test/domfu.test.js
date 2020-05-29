@@ -45,14 +45,13 @@ describe( 'domfu', () => {
             E.h1('Hello!'),
             E.div([A.classAttr('content'), A.id('main')],
                   E.text('test of '),
-                  E.strong([], E.em('DOMFU')),
-                  E.br([]),
+                  E.strong(E.em('DOMFU')),
+                  E.br(),
                   E.span([A.style('color: red')],
-                         E.text('DOMFU')),
-                  E.text(' is a better way to create DOM')));
-        const domfuElement = E.div([], domfuFragment);
+                         'DOMFU'),
+                  ' is a better way to create DOM'));
+        const domfuElement = E.div(domfuFragment);
 
-
-        expect(realElement.innerHTML.replace(/[ \n]/, '')).to.equal(domfuElement.innerHTML.replace(/\s/, ''));
+        expect(realElement.innerHTML).to.equal(domfuElement.innerHTML);
     } );
 } );

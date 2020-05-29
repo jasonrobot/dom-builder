@@ -8,6 +8,11 @@ function element(tag, attrs = [], ...children) {
         attrs = [];
     }
 
+    if (attrs instanceof HTMLElement || attrs instanceof DocumentFragment) {
+        children.unshift(attrs);
+        attrs = [];
+    }
+
     if (Array.isArray(attrs) === false) {
         throw 'attrs must be an array';
     }
@@ -17,9 +22,17 @@ function element(tag, attrs = [], ...children) {
     }
 
     const el = document.createElement(tag);
-    R.forEach(attr => el.setAttributeNode(attr), attrs);
 
-    R.forEach(child => el.appendChild(child), children);
+    for (let attr of attrs) {
+        el.setAttributeNode(attr);
+    }
+
+    for (let child of children) {
+        if (typeof child === 'string') {
+            child = text(child);
+        }
+        el.appendChild(child);
+    }
     return el;
 };
 
