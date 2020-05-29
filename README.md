@@ -13,7 +13,7 @@ import D from 'domfu';
 function myTemplate(name) {
     return (
         D.div([D.id('greeting'), D.classAttr('foobar')],
-            D.text('Hello '),
+            'Hello ',
             D.span([D.style('font-weight: bold')],
                 D.text(name)
             )
@@ -25,6 +25,6 @@ function myTemplate(name) {
 ### Using documentFragments and loops
 ```
 D.documentFragment(
-    ...[1, 2, 3, 4].map(number => D.li([], D.text(number)))
+    ...[1, 2, 3, 4].map(number => D.li(D.text(number)))
 )
 ```
